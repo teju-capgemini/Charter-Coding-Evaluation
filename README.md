@@ -2,6 +2,7 @@ calculate reward point if transaction amount is greater than 100 then added 2 po
 designed login page with required validation 
 add protected routing with error boundries
 axios interceptor is used to calling API's, store transaction data on JSON server in db.json file. common axios methods are keep in httpServices.
+show data in table filter by month and year
 module.css is used for styled component
 code splitted into multiple common component and pass data as prop
 lazy loading is used at rounting for better performance
