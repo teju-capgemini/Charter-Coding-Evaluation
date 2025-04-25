@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import styles from "./style.module.css";
 import TransactionTable from '../../../components/TransactionTable';
 import FilteredTransaction from '../../../components/FilteredTransaction';
+import { Button } from '@mui/material';
 
 const Index = () => {
   const [transactionsData, setTransactionsData] = useState([]);
@@ -25,6 +26,11 @@ const Index = () => {
         setLoading(false);
       })
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    window.location.reload()
+    }
   return (
     <div>
       <h2>Transaction Data</h2>
@@ -34,7 +40,7 @@ const Index = () => {
           :
           <FilteredTransaction transactions={transactionsData}/>
       }
-
+    <Button variant='contained' sx={{marginTop: 3}} onClick={()=>handleLogout()}>Logout</Button>
     </div>
   )
 }
