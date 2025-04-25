@@ -1,0 +1,1 @@
+export const customerTableColumn = ['Sr.No.', 'Name', 'Date', 'Amount', 'Monthly Points', 'Total Points']

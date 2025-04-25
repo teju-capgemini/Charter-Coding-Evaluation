@@ -1,0 +1,28 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tableHeaderStyle {
+    background: #f5f5f5;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .tableRowStyleEven {
+    background: #f9f9f9;
+  }
+    
+    
+  .tableRowStyleOdd {
+    background: #fff;
+  }
+  
+    
+  .tableCellStyle {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }

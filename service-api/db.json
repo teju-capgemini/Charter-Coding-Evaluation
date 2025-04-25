@@ -1,0 +1,529 @@
+{
+    "transactions": [
+        {
+            "customerId": 1,
+            "customerName": "John Doe",
+            "transactionId": "T11",
+            "amount": 194.21,
+            "date": "2025-03-22"
+        },
+        {
+            "customerId": 1,
+            "customerName": "John Doe",
+            "transactionId": "T12",
+            "amount": 144.38,
+            "date": "2025-05-11"
+        },
+        {
+            "customerId": 1,
+            "customerName": "John Doe",
+            "transactionId": "T13",
+            "amount": 315.73,
+            "date": "2025-02-07"
+        },
+        {
+            "customerId": 1,
+            "customerName": "John Doe",
+            "transactionId": "T14",
+            "amount": 495.97,
+            "date": "2025-05-12"
+        },
+        {
+            "customerId": 1,
+            "customerName": "John Doe",
+            "transactionId": "T15",
+            "amount": 67.51,
+            "date": "2025-07-04"
+        },
+        {
+            "customerId": 2,
+            "customerName": "Jane Smith",
+            "transactionId": "T21",
+            "amount": 205.05,
+            "date": "2025-11-26"
+        },
+        {
+            "customerId": 2,
+            "customerName": "Jane Smith",
+            "transactionId": "T22",
+            "amount": 183.59,
+            "date": "2025-07-01"
+        },
+        {
+            "customerId": 2,
+            "customerName": "Jane Smith",
+            "transactionId": "T23",
+            "amount": 63.49,
+            "date": "2025-04-30"
+        },
+        {
+            "customerId": 2,
+            "customerName": "Jane Smith",
+            "transactionId": "T24",
+            "amount": 478.4,
+            "date": "2025-01-19"
+        },
+        {
+            "customerId": 2,
+            "customerName": "Jane Smith",
+            "transactionId": "T25",
+            "amount": 435.65,
+            "date": "2025-07-15"
+        },
+        {
+            "customerId": 3,
+            "customerName": "Alice Johnson",
+            "transactionId": "T31",
+            "amount": 211.67,
+            "date": "2025-11-18"
+        },
+        {
+            "customerId": 3,
+            "customerName": "Alice Johnson",
+            "transactionId": "T32",
+            "amount": 373.06,
+            "date": "2025-11-03"
+        },
+        {
+            "customerId": 3,
+            "customerName": "Alice Johnson",
+            "transactionId": "T33",
+            "amount": 144.38,
+            "date": "2025-11-08"
+        },
+        {
+            "customerId": 3,
+            "customerName": "Alice Johnson",
+            "transactionId": "T34",
+            "amount": 472.47,
+            "date": "2025-03-31"
+        },
+        {
+            "customerId": 3,
+            "customerName": "Alice Johnson",
+            "transactionId": "T35",
+            "amount": 130.44,
+            "date": "2025-05-07"
+        },
+        {
+            "customerId": 4,
+            "customerName": "Bob Brown",
+            "transactionId": "T41",
+            "amount": 291.89,
+            "date": "2025-09-12"
+        },
+        {
+            "customerId": 4,
+            "customerName": "Bob Brown",
+            "transactionId": "T42",
+            "amount": 210.05,
+            "date": "2025-06-22"
+        },
+        {
+            "customerId": 4,
+            "customerName": "Bob Brown",
+            "transactionId": "T43",
+            "amount": 268.03,
+            "date": "2025-11-02"
+        },
+        {
+            "customerId": 4,
+            "customerName": "Bob Brown",
+            "transactionId": "T44",
+            "amount": 177.51,
+            "date": "2025-03-10"
+        },
+        {
+            "customerId": 4,
+            "customerName": "Bob Brown",
+            "transactionId": "T45",
+            "amount": 70.5,
+            "date": "2025-02-16"
+        },
+        {
+            "customerId": 5,
+            "customerName": "Charlie Davis",
+            "transactionId": "T51",
+            "amount": 205.19,
+            "date": "2025-09-17"
+        },
+        {
+            "customerId": 5,
+            "customerName": "Charlie Davis",
+            "transactionId": "T52",
+            "amount": 480.35,
+            "date": "2025-03-13"
+        },
+        {
+            "customerId": 5,
+            "customerName": "Charlie Davis",
+            "transactionId": "T53",
+            "amount": 487.02,
+            "date": "2025-07-30"
+        },
+        {
+            "customerId": 5,
+            "customerName": "Charlie Davis",
+            "transactionId": "T54",
+            "amount": 59.37,
+            "date": "2025-05-01"
+        },
+        {
+            "customerId": 5,
+            "customerName": "Charlie Davis",
+            "transactionId": "T55",
+            "amount": 334.47,
+            "date": "2025-08-18"
+        },
+        {
+            "customerId": 6,
+            "customerName": "David Wilson",
+            "transactionId": "T61",
+            "amount": 42.91,
+            "date": "2025-10-04"
+        },
+        {
+            "customerId": 6,
+            "customerName": "David Wilson",
+            "transactionId": "T62",
+            "amount": 335.86,
+            "date": "2025-03-03"
+        },
+        {
+            "customerId": 6,
+            "customerName": "David Wilson",
+            "transactionId": "T63",
+            "amount": 388.39,
+            "date": "2025-12-27"
+        },
+        {
+            "customerId": 6,
+            "customerName": "David Wilson",
+            "transactionId": "T64",
+            "amount": 109.1,
+            "date": "2025-01-01"
+        },
+        {
+            "customerId": 6,
+            "customerName": "David Wilson",
+            "transactionId": "T65",
+            "amount": 497.42,
+            "date": "2025-11-17"
+        },
+        {
+            "customerId": 7,
+            "customerName": "Eva Martinez",
+            "transactionId": "T71",
+            "amount": 26.1,
+            "date": "2025-01-01"
+        },
+        {
+            "customerId": 7,
+            "customerName": "Eva Martinez",
+            "transactionId": "T72",
+            "amount": 13.58,
+            "date": "2025-11-13"
+        },
+        {
+            "customerId": 7,
+            "customerName": "Eva Martinez",
+            "transactionId": "T73",
+            "amount": 47.86,
+            "date": "2025-08-30"
+        },
+        {
+            "customerId": 7,
+            "customerName": "Eva Martinez",
+            "transactionId": "T74",
+            "amount": 444.72,
+            "date": "2025-04-13"
+        },
+        {
+            "customerId": 7,
+            "customerName": "Eva Martinez",
+            "transactionId": "T75",
+            "amount": 390.56,
+            "date": "2025-06-23"
+        },
+        {
+            "customerId": 8,
+            "customerName": "Frank Clark",
+            "transactionId": "T81",
+            "amount": 110.82,
+            "date": "2025-08-19"
+        },
+        {
+            "customerId": 8,
+            "customerName": "Frank Clark",
+            "transactionId": "T82",
+            "amount": 256.14,
+            "date": "2025-08-20"
+        },
+        {
+            "customerId": 8,
+            "customerName": "Frank Clark",
+            "transactionId": "T83",
+            "amount": 236.76,
+            "date": "2025-09-24"
+        },
+        {
+            "customerId": 8,
+            "customerName": "Frank Clark",
+            "transactionId": "T84",
+            "amount": 143.49,
+            "date": "2025-07-24"
+        },
+        {
+            "customerId": 8,
+            "customerName": "Frank Clark",
+            "transactionId": "T85",
+            "amount": 438.29,
+            "date": "2025-12-07"
+        },
+        {
+            "customerId": 9,
+            "customerName": "Grace Lewis",
+            "transactionId": "T91",
+            "amount": 306.72,
+            "date": "2025-11-20"
+        },
+        {
+            "customerId": 9,
+            "customerName": "Grace Lewis",
+            "transactionId": "T92",
+            "amount": 53.34,
+            "date": "2025-10-26"
+        },
+        {
+            "customerId": 9,
+            "customerName": "Grace Lewis",
+            "transactionId": "T93",
+            "amount": 331.05,
+            "date": "2025-01-14"
+        },
+        {
+            "customerId": 9,
+            "customerName": "Grace Lewis",
+            "transactionId": "T94",
+            "amount": 176.8,
+            "date": "2025-07-16"
+        },
+        {
+            "customerId": 9,
+            "customerName": "Grace Lewis",
+            "transactionId": "T95",
+            "amount": 375.61,
+            "date": "2025-05-21"
+        },
+        {
+            "customerId": 10,
+            "customerName": "Hank Walker",
+            "transactionId": "T101",
+            "amount": 268.64,
+            "date": "2025-03-31"
+        },
+        {
+            "customerId": 10,
+            "customerName": "Hank Walker",
+            "transactionId": "T102",
+            "amount": 488.37,
+            "date": "2025-08-30"
+        },
+        {
+            "customerId": 10,
+            "customerName": "Hank Walker",
+            "transactionId": "T103",
+            "amount": 375.71,
+            "date": "2025-04-27"
+        },
+        {
+            "customerId": 10,
+            "customerName": "Hank Walker",
+            "transactionId": "T104",
+            "amount": 429.47,
+            "date": "2025-06-18"
+        },
+        {
+            "customerId": 10,
+            "customerName": "Hank Walker",
+            "transactionId": "T105",
+            "amount": 127.43,
+            "date": "2025-05-19"
+        },
+        {
+            "customerId": 11,
+            "customerName": "Ivy Hall",
+            "transactionId": "T111",
+            "amount": 393.23,
+            "date": "2025-08-06"
+        },
+        {
+            "customerId": 11,
+            "customerName": "Ivy Hall",
+            "transactionId": "T112",
+            "amount": 36.34,
+            "date": "2025-01-04"
+        },
+        {
+            "customerId": 11,
+            "customerName": "Ivy Hall",
+            "transactionId": "T113",
+            "amount": 109.62,
+            "date": "2025-12-21"
+        },
+        {
+            "customerId": 11,
+            "customerName": "Ivy Hall",
+            "transactionId": "T114",
+            "amount": 177.62,
+            "date": "2025-10-14"
+        },
+        {
+            "customerId": 11,
+            "customerName": "Ivy Hall",
+            "transactionId": "T115",
+            "amount": 252.99,
+            "date": "2025-09-10"
+        },
+        {
+            "customerId": 12,
+            "customerName": "Jack Young",
+            "transactionId": "T121",
+            "amount": 59.58,
+            "date": "2025-05-18"
+        },
+        {
+            "customerId": 12,
+            "customerName": "Jack Young",
+            "transactionId": "T122",
+            "amount": 411.94,
+            "date": "2025-07-19"
+        },
+        {
+            "customerId": 12,
+            "customerName": "Jack Young",
+            "transactionId": "T123",
+            "amount": 214.92,
+            "date": "2025-07-05"
+        },
+        {
+            "customerId": 12,
+            "customerName": "Jack Young",
+            "transactionId": "T124",
+            "amount": 10.43,
+            "date": "2025-08-12"
+        },
+        {
+            "customerId": 12,
+            "customerName": "Jack Young",
+            "transactionId": "T125",
+            "amount": 457.41,
+            "date": "2025-07-14"
+        },
+        {
+            "customerId": 13,
+            "customerName": "Kara King",
+            "transactionId": "T131",
+            "amount": 228.71,
+            "date": "2025-06-08"
+        },
+        {
+            "customerId": 13,
+            "customerName": "Kara King",
+            "transactionId": "T132",
+            "amount": 184.12,
+            "date": "2025-06-17"
+        },
+        {
+            "customerId": 13,
+            "customerName": "Kara King",
+            "transactionId": "T133",
+            "amount": 295.14,
+            "date": "2025-01-12"
+        },
+        {
+            "customerId": 13,
+            "customerName": "Kara King",
+            "transactionId": "T134",
+            "amount": 91.54,
+            "date": "2025-01-21"
+        },
+        {
+            "customerId": 13,
+            "customerName": "Kara King",
+            "transactionId": "T135",
+            "amount": 200.8,
+            "date": "2025-03-09"
+        },
+        {
+            "customerId": 14,
+            "customerName": "Liam Scott",
+            "transactionId": "T141",
+            "amount": 223.96,
+            "date": "2025-10-08"
+        },
+        {
+            "customerId": 14,
+            "customerName": "Liam Scott",
+            "transactionId": "T142",
+            "amount": 32.03,
+            "date": "2025-06-18"
+        },
+        {
+            "customerId": 14,
+            "customerName": "Liam Scott",
+            "transactionId": "T143",
+            "amount": 426.23,
+            "date": "2025-10-11"
+        },
+        {
+            "customerId": 14,
+            "customerName": "Liam Scott",
+            "transactionId": "T144",
+            "amount": 326.73,
+            "date": "2025-02-18"
+        },
+        {
+            "customerId": 14,
+            "customerName": "Liam Scott",
+            "transactionId": "T145",
+            "amount": 165.4,
+            "date": "2025-07-22"
+        },
+        {
+            "customerId": 15,
+            "customerName": "Mia Adams",
+            "transactionId": "T151",
+            "amount": 269.76,
+            "date": "2025-04-21"
+        },
+        {
+            "customerId": 15,
+            "customerName": "Mia Adams",
+            "transactionId": "T152",
+            "amount": 251.3,
+            "date": "2025-02-13"
+        },
+        {
+            "customerId": 15,
+            "customerName": "Mia Adams",
+            "transactionId": "T153",
+            "amount": 478.12,
+            "date": "2025-09-22"
+        },
+        {
+            "customerId": 15,
+            "customerName": "Mia Adams",
+            "transactionId": "T154",
+            "amount": 404.83,
+            "date": "2025-04-15"
+        },
+        {
+            "customerId": 15,
+            "customerName": "Mia Adams",
+            "transactionId": "T155",
+            "amount": 446.28,
+            "date": "2025-08-07"
+        }
+    ]
+}
