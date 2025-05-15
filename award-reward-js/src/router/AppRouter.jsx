@@ -9,7 +9,6 @@ import RoutesList from "./routes";
 
 const AppRouter = () => {
     const loggedInUser = localStorage.getItem('authToken');
-    console.log('loggedInUser', loggedInUser)
   return (
     <BrowserRouter>
     <Routes>

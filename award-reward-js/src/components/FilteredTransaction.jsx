@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TransactionTable from './TransactionTable';
+import TransactionTable, { transactionsArrayPropType } from './TransactionTable';
 
 const FilteredTransaction = ({ transactions }) => {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -51,4 +51,10 @@ const FilteredTransaction = ({ transactions }) => {
     );
 };
 
+FilteredTransaction.propTypes = {
+  transactions: transactionsArrayPropType.isRequired,
+};
+
 export default FilteredTransaction;
+
+

@@ -1,89 +1,138 @@
-import React from 'react';
+import React, { useMemo, useState } from "react";
 import styles from "../pages/module/Dashboard/style.module.css";
-import { customerTableColumn } from '../constant';
+import { customerTableColumn } from "../constant";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { IconButton } from "@mui/material";
+import CustomModal from "./CustomModal";
+import { calculateMonthlyPoints, calculateTotalPoints, getMonthInWord } from "../util/commonFunctions";
+import PropTypes from "prop-types";
 
-const TransactionTable = ({transactions}) => {
-    const calculatePoints = (amount) => {
-        let points = 0;
-        if (amount > 100) {
-          points += 2 * (amount - 100);
-          amount = 100;
-        }
-        if (amount > 50) {
-          points += 1 * (amount - 50);
-        }
-        return points;
-      }
-    
-      const calculateMonthlyPoints = (transaction) => {
-    
-        const monthlyPoints = {};
-        const { customerId, amount, date } = transaction;
-        const month = date.slice(0, 7); // Extract YYYY-MM from date
-    
-        const points = calculatePoints(amount);
-    
-        if (!monthlyPoints[customerId]) {
-          monthlyPoints[customerId] = {};
-        }
-        if (!monthlyPoints[customerId][month]) {
-          monthlyPoints[customerId][month] = 0;
-        }
-        monthlyPoints[customerId][month] += points;
-        return Math.round(monthlyPoints[customerId][month]);
-      }
-    
-      const calculateTotalPoints = (transaction) => {
-        const monthlyPoints = {};
-        const { customerId, amount, date } = transaction;
-        const month = date.slice(0, 7); // Extract YYYY-MM from date
-        const points = calculatePoints(amount);
-    
-        if (!monthlyPoints[customerId]) {
-          monthlyPoints[customerId] = { pointsByMonth: {} };
-        }
-    
-        if (!monthlyPoints[customerId].pointsByMonth[month]) {
-          monthlyPoints[customerId].pointsByMonth[month] = 0;
-        }
-        monthlyPoints[customerId].pointsByMonth[month] += points;
-        return Math.round(monthlyPoints[customerId].pointsByMonth[month]);
-      }
-    
-      const getMonthInWord = (date) => {
-        const dateObj = new Date(date);
-        const options = { year: 'numeric', month: 'short' };
-        const month = dateObj.toLocaleDateString('en-US', options).replace(' ', '-');
-        return month
-      }
+const TransactionTable = ({ transactions }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(15);
+  const [openModal, setOpenModal] = useState(false);
+  const [custTransactionDetails, setCustTransactionDetails] = useState({});
 
+  const memoizeTransactions = useMemo(() => {
+    return transactions.map((transaction) => ({
+      ...transaction,
+      monthlyPoints: calculateMonthlyPoints(transaction),
+      totalPoints: calculateTotalPoints(transaction),
+      customizeDate: getMonthInWord(transaction.date),
+    }));
+  }, [transactions]);
+
+  const handleClick = (direction) => {
+    if (direction === "prev" && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    } else if (
+      direction === "next" &&
+      currentPage < Math.ceil(memoizeTransactions.length / rowsPerPage)
+    ) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const start = (currentPage - 1) * rowsPerPage;
+  const end = start + rowsPerPage;
+  const pageData = memoizeTransactions.slice(start, end);
+
+  const showCustomerTransaction = (custTransaction) => {
+    setOpenModal(true);
+    setCustTransactionDetails(custTransaction);
+  };
+  console.log('Transaction table transaction', transactions);
   return (
-  <div style={{ width: '100%', overflowX: 'auto', marginTop: '20px' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-              <tbody>
-                <tr>{
-                  customerTableColumn.map((col, i) => (
-                    <th key={i} className={styles.tableHeaderStyle}>{col}</th>
-                  ))
+    <div style={{ overflowX: "auto", padding:20 }}>
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <tbody>
+          <tr>
+            {customerTableColumn.map((col, i) => (
+              <th key={i} className={styles.tableHeaderStyle}>
+                {col}
+              </th>
+            ))}
+          </tr>
+          {pageData &&
+            pageData.map((transaction, i) => (
+              <tr
+                onClick={() => showCustomerTransaction(transaction)}
+                key={transaction.transactionId}
+                className={
+                  i % 2 === 0
+                    ? styles.tableRowStyleEven
+                    : styles.tableRowStyleOdd
                 }
-                </tr>
-                {
-                  transactions && transactions.map((transaction, i) => (
-                    <tr key={transaction.transactionId} className={i % 2 === 0 ? styles.tableRowStyleEven : styles.tableRowStyleOdd}>
-                      <td className={styles.tableCellStyle}>{i + 1}</td>
-                      <td className={styles.tableCellStyle}>{transaction.customerName}</td>
-                      <td className={styles.tableCellStyle}>{getMonthInWord(transaction.date)}</td>
-                      <td className={styles.tableCellStyle}>{transaction.amount}</td>
-                      <td className={styles.tableCellStyle}>{calculateMonthlyPoints(transaction)}</td>
-                      <td className={styles.tableCellStyle}>{calculateTotalPoints(transaction)}</td>
-                    </tr>
-                  ))
-                }
+              >
+                <td className={styles.tableCellStyle}>{(currentPage-1) * rowsPerPage + i + 1}</td>
+                <td className={styles.tableCellStyle}>
+                  {transaction.customerName}
+                </td>
+                <td className={styles.tableCellStyle}>
+                  {transaction.customizeDate}
+                </td>
+                <td className={styles.tableCellStyle}>{transaction.amount}</td>
+                <td className={styles.tableCellStyle}>
+                  {transaction.monthlyPoints}
+                </td>
+                <td className={styles.tableCellStyle}>
+                  {transaction.totalPoints}
+                </td>
+                <td className={styles.tableCellStyle} style={{textAlign: 'center'}}>
+                  <IconButton
+                    onClick={() =>
+                      showCustomerTransaction(transaction.transactionId)
+                    }
+                  >
+                    <VisibilityIcon color="primary" fontSize="small" />
+                  </IconButton>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
 
-              </tbody>
-            </table>
-          </div>
-  )
-}
+      <CustomModal open={openModal} setOpen={setOpenModal} transaction={custTransactionDetails}/>
+      <div className={styles.footer}>
+        <div>
+           <label>Rows per page : </label>
+          <select className={styles.dropdown} value={rowsPerPage} onChange={(e)=>{setRowsPerPage(e.target.value)}}>
+            {
+              [5,15,25,50].map((each)=>(
+                <option value={each}>{each}</option> 
+              ))
+            }
+           
+          </select>
+        </div>
+      <div className={styles.pagination}>
+                <button onClick={() => handleClick("prev")}>Previous</button>
+               {" "}
+        <span>
+          Page {currentPage} of{" "}
+          {Math.ceil(memoizeTransactions.length / rowsPerPage)}
+        </span>
+                <button onClick={() => handleClick("next")}>Next</button>
+             {" "}
+      </div>
+      </div>
+    </div>
+  );
+};
 
-export default TransactionTable
+export const transactionPropType = PropTypes.shape({
+  customerId: PropTypes.number.isRequired,
+  customerName: PropTypes.string.isRequired,
+  transactionId: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired, // ISO date string
+});
+
+export const transactionsArrayPropType = PropTypes.arrayOf(transactionPropType);
+
+
+TransactionTable.propTypes = {
+  transactions: transactionsArrayPropType.isRequired,
+};
+
+export default TransactionTable;

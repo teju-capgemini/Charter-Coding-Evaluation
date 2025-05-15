@@ -16,21 +16,24 @@ const Index = () => {
 
   const getTransactionData = async () => {
     setLoading(true);
-    await get('/transactions')
-      .then((res) => {
-        setTransactionsData(res);
-        setLoading(false);
+    await fetch('/db.json')
+      .then(response => response.json())
+      .then(data => {
+        setTransactionsData(data.transactions);
       })
       .catch(() => {
         toast.error('Unable to get Data');
+      })
+      .finally(() => {
         setLoading(false);
       })
+
   }
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     window.location.reload()
-    }
+  }
   return (
     <div>
       <h2>Transaction Data</h2>
@@ -38,9 +41,9 @@ const Index = () => {
         loading ?
           <h4>Loading...</h4>
           :
-          <FilteredTransaction transactions={transactionsData}/>
+          <FilteredTransaction transactions={transactionsData} />
       }
-    <Button variant='contained' sx={{marginTop: 3}} onClick={()=>handleLogout()}>Logout</Button>
+      <Button variant='contained' onClick={() => handleLogout()}>Logout</Button>
     </div>
   )
 }
